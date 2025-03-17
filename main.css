@@ -1,0 +1,355 @@
+/* Tema Claro - Institucional do Inatel */
+:root {
+    --primary-dark-blue: #003366;
+    --primary-medium-blue: #005BB5;
+    --primary-light-blue: #0073E6;
+    --neutral-light-gray: #F2F2F2;
+    --neutral-white: #FFFFFF;
+}
+/* Tema Escuro - Moderno */
+.theme-dark {
+    --accent-neon-green: #00FF6A;
+    --neutral-dark-gray: #1F1F1F;
+    --primary-teal-blue: #006466;
+    --neutral-medium-gray: #4E4E4E;
+    --neutral-black: #000000;
+}
+
+/* Geral */
+body {
+    font-family: 'Arimo', sans-serif; /* Fonte importada do Google Fonts */
+    font-size: 100%; /* Base para medidas relativas */
+    line-height: 1.6; /* Espacamento entre linhas */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Cor padrão do texto */
+    background-color: var(--neutral-light-gray); /* Padrão tema claro */
+    color: var(--primary-dark-blue);
+    background-color: #f0f0f0;
+    transition: background-color 0.3s, color 0.3s;    
+}
+
+/* Material Symbols (Ícones) */
+.material-symbols-outlined {
+    font-size: 24px; /* Tamanho padrão dos ícones */
+    vertical-align: middle;
+    color: var(--primary-medium-blue); /* Cor padrão dos ícones */
+    transition: color 0.3s ease;
+}
+
+.material-symbols-outlined:hover {
+    color: var(--primary-dark-blue); /* Cor ao passar o mouse */
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px 0;
+    background-color: var(--primary-light-blue);
+    border-radius: 8px;
+}
+.header .icon{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--neutral-light-gray);
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 20px auto;
+}
+.icon:hover {
+    background-color: var(--neutral-white);
+}
+.header .logo{
+    width: 20%;
+    height: 20%;
+    border-radius: 5px;
+}
+
+/* Mensagens */
+.mensagens {
+    width: 90%;
+    padding: 15px;
+    background-color: var(--neutral-white);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px  auto;
+    transition: background-color 0.3s, color 0.3s;
+}
+.mensagens h2 {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre ícone e texto */
+    font-size: 1.5rem;
+    color: var(--primary-dark-blue);
+}
+.mensagens p {
+    margin: 5px 0;
+}
+
+/* Aulas */
+.aulas {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--primary-light-blue);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px auto;
+}
+.disciplina {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--primary-medium-blue);
+    color: var(--neutral-white);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--neutral-white);
+}
+.aulas .disciplina h3 {
+    margin: 0;
+}
+
+/* Notícias */
+.noticias {
+    width: 90%;
+    background-color: var(--neutral-light-gray);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px auto;  
+}
+.card {
+    min-width: 80%; /* Cada card ocupará 80% da largura do contêiner */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+.card h3 {
+    margin-bottom: 10px;
+}
+.card .info h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Estilo para Títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700; /* Títulos em negrito */
+    line-height: 1.4; /* Espaçamento mais compacto */
+    margin: 0 0 1rem; /* Margem inferior para separar os elementos */
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    /*font-weight: <weight>; */
+    font-style: normal;
+    font-size: 14px;
+    color: var(--cor-text);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+h1 {
+    font-size: 2.5rem; /* Título principal */
+}
+
+h2 {
+    font-size: 2rem; /* Subtítulos */
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+/* Estilo para Parágrafos */
+p {
+    font-size: 1rem; /* Tamanho de texto ajustado para leitura confortável */
+    margin: 0 0 1rem; /* Margem inferior */
+    font-family: "Arimo", sans-serif;
+    font-optical-sizing: auto;
+    /*font-weight: <weight>; */
+    font-style: normal;
+    color: var(--cor-text);
+    line-height: 1.5;
+    orphans: 3;
+    padding-left: 5px;
+    padding-right: 5px
+}
+
+/* Textos Pequenos */
+small {
+    font-size: 0.875rem;
+    color: #555; /* Tom mais claro para texto complementar */
+}
+
+/* Links */
+a {
+    color: #005BB5; /* Azul institucional do Inatel */
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #003366; /* Azul escuro ao passar o mouse */
+}
+
+.theme-dark .mensagens {
+    background-color: var(--neutral-medium-gray);
+    color: var(--accent-neon-green);
+}
+.theme-dark .aulas {
+    background-color: var(--neutral-dark-gray);
+}
+.theme-dark .disciplina {
+    background-color: var(--primary-teal-blue);
+    color: var(--neutral-white);
+}
+.theme-dark .noticias {
+    background-color: var(--neutral-black);
+    color: var(--accent-neon-green);
+}
+.theme-dark .card {
+    background-color: var(--primary-teal-blue);
+    color: var(--neutral-white);
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Reduz o tamanho do título em telas menores */
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 0.9rem; /* Texto um pouco menor em dispositivos móveis */
+    }
+}
+/* Botão do Menu */
+.menu-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #0073e6;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000; /* Sempre acima dos elementos da página */
+}
+
+.menu-button:hover {
+    background-color: #005bb5;
+}
+
+/* Menu Oculto */
+.menu {
+    position: fixed;
+    top: 70px;
+    left: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 999; /* Sobreposição ao conteúdo */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Estado Oculto */
+.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+/* Botões do Menu */
+.theme-button {
+    display: block;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.theme-button:hover {
+    background-color: #005bb5;
+}
+
+/* Conteúdo da Página */
+.content {
+    padding: 20px;
+}
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 10px; /* Espaço entre os cards */
+}
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0;
+}
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px;
+}
+.card img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #ddd;
+}
+.card .info {
+    padding: 15px;
+}
+.icon {
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: 18px;
+    display: inline-block;
+    vertical-align: middle
+}
+button {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 10px;
+}
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+#prevBtn { left: 10px; }
+#nextBtn { right: 10px; }
+  
