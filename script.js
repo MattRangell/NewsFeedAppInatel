@@ -91,6 +91,7 @@ const carousel = document.querySelector('.carousel');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 let currentIndex = 0;
+
 // Adicionar eventos ao carrossel
 eventos.forEach(evento => {
     const card = document.createElement('div');
@@ -120,13 +121,31 @@ function updateCarousel() {
 nextBtn.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % eventos.length; // Circular
     updateCarousel();
+    resetAutoSlide(); // Reinicia o temporizador ao clicar manualmente
 });
 
 // Botão anterior
 prevBtn.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + eventos.length) % eventos.length; // Circular
     updateCarousel();
+    resetAutoSlide(); // Reinicia o temporizador ao clicar manualmente
 });
 
-// Atualizar carrossel na carga inicial
+// Função para deslizar automaticamente
+function autoSlide() {
+    currentIndex = (currentIndex + 1) % eventos.length; // Circular
+    updateCarousel();
+}
+
+// Reiniciar o temporizador
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval); // Limpa o intervalo existente
+    autoSlideInterval = setInterval(autoSlide, 5000); // Reinicia o intervalo
+}
+
+// Inicializa o carrossel
+let autoSlideInterval = setInterval(autoSlide, 5000); // Troca automática a cada 5 segundos
+
+// Atualiza o carrossel na carga inicial
 window.onload = updateCarousel;
+
