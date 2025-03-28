@@ -91,6 +91,7 @@ const carousel = document.querySelector('.carousel');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 let currentIndex = 0;
+let isPaused = false; // Variável para controlar o estado do intervalo
 
 // Adicionar eventos ao carrossel
 eventos.forEach(evento => {
@@ -112,7 +113,7 @@ eventos.forEach(evento => {
 
 // Lógica de navegação do carrossel
 function updateCarousel() {
-    const totalCards = eventos.length;
+    //const totalCards = eventos.length;
     const cardWidth = carousel.querySelector('.card').offsetWidth;
     carousel.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
 }
@@ -121,14 +122,12 @@ function updateCarousel() {
 nextBtn.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % eventos.length; // Circular
     updateCarousel();
-    resetAutoSlide(); // Reinicia o temporizador ao clicar manualmente
 });
 
 // Botão anterior
 prevBtn.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + eventos.length) % eventos.length; // Circular
     updateCarousel();
-    resetAutoSlide(); // Reinicia o temporizador ao clicar manualmente
 });
 
 // Função para deslizar automaticamente
@@ -137,15 +136,30 @@ function autoSlide() {
     updateCarousel();
 }
 
-// Reiniciar o temporizador
 function resetAutoSlide() {
     clearInterval(autoSlideInterval); // Limpa o intervalo existente
     autoSlideInterval = setInterval(autoSlide, 5000); // Reinicia o intervalo
+}    
+
+// Função para reiniciar o intervalo
+function startAutoSlide() {
+    autoSlideInterval = setInterval(autoSlide, 5000); // Intervalo de 5 segundos
 }
 
-// Inicializa o carrossel
-let autoSlideInterval = setInterval(autoSlide, 5000); // Troca automática a cada 5 segundos
+// Função para parar o carrossel
+function stopAutoSlide() {
+    clearInterval(autoSlideInterval); // Limpa o intervalo, pausando o carrossel
+}
+
+
+// Adicionar evento para pausar o carrossel ao passar o mouse sobre ele
+carousel.addEventListener('mouseover', stopAutoSlide);
+
+// Adicionar evento para retomar o carrossel ao tirar o mouse
+carousel.addEventListener('mouseleave', startAutoSlide);
+
+// Inicializa o carrossel com deslizamento automático
+startAutoSlide();
 
 // Atualiza o carrossel na carga inicial
 window.onload = updateCarousel;
-
