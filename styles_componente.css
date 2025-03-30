@@ -1,0 +1,101 @@
+:root {
+    /* Cores */
+    --frequencia: #126ae2;
+    --nota: #00b894;
+    --prova: #ff5050;
+    --primary-medium-blue: #1e90ff;
+    --neutral-white: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+  
+    /* Tipografia */
+    --font-size-large: 18px;
+    --font-size-medium: 14px;
+    --font-size-small: 12px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .comp-aula {
+      width: 50%;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .lables {
+      flex-direction: column;
+      gap: 10px;
+      width: 50%;
+      
+    }
+  
+    .lable-prova,
+    .lable-frequencia,
+    .lable-nota {
+      width: 100%; /* Torna os rótulos mais adaptáveis */
+      text-align: center;
+      padding: 10px;   
+    }
+  }
+
+.titulo_aula {
+    flex: 2; /* Allow title to take up more space */
+    font-weight: bold;
+    font-size: 15px;
+    padding: 0 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .lables {
+    display: flex;
+    gap: 10px;
+    flex: 1; /* Allow labels to be flexible */
+    justify-content: space-between; /* Spread out labels evenly */
+  }
+  
+  .lable-prova,
+  .lable-frequencia,
+  .lable-nota {
+    background-color: var(--prova);
+    padding: 7px 15px;
+    margin-bottom: 10px;
+    border-radius: 500px;
+    text-align: center;
+    margin-right: 10px;
+  }
+  
+  .lable-frequencia {
+    background-color: var(--primary-medium-blue);
+  } 
+  
+  .lable-nota {
+    background-color: var(--primary-medium-blue);
+  }
+
+  .p {
+    flex: 1; /* Give location/time some space */
+    font-size: var(--font-size-medium);
+  }
+  
+  .p_lable {
+    font-size: 13px;
+    color: rgb(0, 0, 0);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .comp-aula {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap; /* Wrap to the next line if necessary */
+    align-items: center;
+    gap: 15px;
+    background-color: var(--neutral-white);
+    color: var(black);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.1);
+    color: var(black);
+    margin: auto; /* Center the component */
+}
